@@ -14,10 +14,10 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 logging.getLogger('googleapicliet.discovery_cache').setLevel("WARNING")
 SCOPES = 'https://www.googleapis.com/auth/drive'  # 设置Google权限API范围
-store = file.Storage('/content/drive/My Drive/1/9527.fm/token.json')
+store = file.Storage('token.json')
 creds = store.get()
 if not creds or creds.invalid:
-    flow = client.flow_from_clientsecrets('/content/drive/My Drive/1/9527.fm/credentials.json', SCOPES)
+    flow = client.flow_from_clientsecrets('credentials.json', SCOPES)
     creds = tools.run_flow(flow, store)
 drive_service = build('drive', 'v3', http=creds.authorize(Http()))
 sheet_service = build('sheets', 'v4', http=creds.authorize(Http()))
@@ -95,6 +95,6 @@ def get_info(url, num):
 
 path = '1.txt'
 
-for i in range(11116, 55755):
+for i in range(25000, 55755):
     url = 'https://www.9527.fm/movie/{}.html'.format(i)
     get_info(url, num=i)
