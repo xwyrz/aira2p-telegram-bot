@@ -103,7 +103,7 @@ def get_info(url, num):
     values.append(author)
     values.append(movie_info)
     values.append(urls)
-    print(values)
+    set_values(values)
 
 for i in range(1, 26041):
   url = 'https://www.9527.fm/tv/{}.html'.format(i)
