@@ -1,3 +1,6 @@
+'''
+:爬取9527.fm网站播放源的爬虫，并将结果保存到Google sheet！
+'''
 from __future__ import print_function
 from oauth2client import file, client, tools
 from googleapiclient.discovery import build
