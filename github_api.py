@@ -50,14 +50,14 @@ def get_sha(file_name):
         sha = ''
     return sha
 
-# 上传文件，也可以上传新文件
+# 更新文件，也可以上传新文件
 def update_file(file_name):
     sha = get_sha(file_name)
     d = {
         "message": "my commit message update",
         "committer": {
             "name": "Scott Chacon",
-            "email": "schacon@gmail.com"
+            "email": "{}@gmail.com".format(user)
         },
         "content": fn_base64(file_name),
         "sha": sha
